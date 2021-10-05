@@ -23,5 +23,13 @@ namespace ppedv.Laureatus.Data.EfCore
 
             optionsBuilder.UseSqlServer(conString).UseLazyLoadingProxies();
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Person>().ToTable("Person");
+            modelBuilder.Entity<Person>().Property(x => x.Job).HasMaxLength(72).HasColumnName("Beruf");
+
+            modelBuilder.Entity<Price>().HasIndex(x => x.Year).IsUnique();
+        }
     }
 }

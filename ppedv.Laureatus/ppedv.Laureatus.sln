@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Model", "pp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Data.EfCore", "ppedv.Laureatus.Data.EfCore\ppedv.Laureatus.Data.EfCore.csproj", "{28993115-17B9-48A4-B9AD-9FE6CFA2F625}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Data.EfCore.Tests", "ppedv.Laureatus.Data.EfCore.Tests\ppedv.Laureatus.Data.EfCore.Tests.csproj", "{19F1732B-2647-4F5B-9B83-A5EBF79B187F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{28993115-17B9-48A4-B9AD-9FE6CFA2F625}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28993115-17B9-48A4-B9AD-9FE6CFA2F625}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28993115-17B9-48A4-B9AD-9FE6CFA2F625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19F1732B-2647-4F5B-9B83-A5EBF79B187F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19F1732B-2647-4F5B-9B83-A5EBF79B187F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19F1732B-2647-4F5B-9B83-A5EBF79B187F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19F1732B-2647-4F5B-9B83-A5EBF79B187F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
