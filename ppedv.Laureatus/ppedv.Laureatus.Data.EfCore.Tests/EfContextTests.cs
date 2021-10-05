@@ -17,6 +17,38 @@ namespace ppedv.Laureatus.Data.EfCore.Tests
         }
 
         [Fact]
+        public void Is_created_and_modified_set_on_savechange()
+        {
+            var p = new Person() { Name = "Alf" };
+
+            using (var con = new EfContext())
+            {
+                con.Add(p);
+                con.SaveChanges();
+            }
+
+            using (var con = new EfContext())
+            {
+                //check created
+                var loaded = con.Persons.Find(p.Id);
+                Assert.NotEqual(DateTime.MinValue, loaded.Created);
+                Assert.NotEqual(DateTime.MinValue, loaded.Modified);
+                Assert.Equal(loaded.Created, loaded.Modified);
+
+                loaded.Name = "Willi";
+                con.SaveChanges();
+            }
+
+            using (var con = new EfContext())
+            {
+                //check modified
+                var loaded = con.Persons.Find(p.Id);
+                Assert.NotEqual(loaded.Created, loaded.Modified);
+            }
+        }
+
+
+        [Fact]
         public void Can_CRUD_Person()
         {
             var p = new Person() { Name = $"Fred_{Guid.NewGuid()}" };

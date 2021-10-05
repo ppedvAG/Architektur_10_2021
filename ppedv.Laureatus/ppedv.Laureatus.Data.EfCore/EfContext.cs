@@ -31,5 +31,26 @@ namespace ppedv.Laureatus.Data.EfCore
 
             modelBuilder.Entity<Price>().HasIndex(x => x.Year).IsUnique();
         }
+
+        public override int SaveChanges()
+        {
+            var now = DateTime.Now;
+            foreach (var item in ChangeTracker.Entries().Where(x=>x.State == EntityState.Added))
+            {
+                if (item.Entity is Entity en)
+                {
+                    en.Created = now;
+                    en.Modified = now;
+                }
+            }
+
+            foreach (var item in ChangeTracker.Entries().Where(x => x.State == EntityState.Modified))
+            {
+                if (item.Entity is Entity en)
+                    en.Modified = now;
+            }
+
+            return base.SaveChanges();
+        }
     }
 }
