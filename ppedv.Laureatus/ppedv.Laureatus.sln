@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Logic", "pp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.UI.DevConsole", "ppedv.Laureatus.UI.DevConsole\ppedv.Laureatus.UI.DevConsole.csproj", "{F1F9D25F-55D0-4B51-BCFA-21ECE4D9BA44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Logic.Tests", "ppedv.Laureatus.Logic.Tests\ppedv.Laureatus.Logic.Tests.csproj", "{514B6B29-619F-4065-9901-4C27192B5F45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F1F9D25F-55D0-4B51-BCFA-21ECE4D9BA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1F9D25F-55D0-4B51-BCFA-21ECE4D9BA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1F9D25F-55D0-4B51-BCFA-21ECE4D9BA44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{514B6B29-619F-4065-9901-4C27192B5F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514B6B29-619F-4065-9901-4C27192B5F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514B6B29-619F-4065-9901-4C27192B5F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514B6B29-619F-4065-9901-4C27192B5F45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
