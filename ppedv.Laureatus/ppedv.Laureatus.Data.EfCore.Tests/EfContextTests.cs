@@ -1,16 +1,12 @@
 using AutoFixture;
-using AutoFixture.Kernel;
 using FluentAssertions;
 using ppedv.Laureatus.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using Xunit;
 
 namespace ppedv.Laureatus.Data.EfCore.Tests
 {
-    public class EfContextTests
+    public partial class EfContextTests
     {
         [Fact]
         public void Can_create_db()
@@ -81,25 +77,6 @@ namespace ppedv.Laureatus.Data.EfCore.Tests
             }
         }
 
-        internal class PropertyNameOmitter : ISpecimenBuilder
-        {
-            private readonly IEnumerable<string> names;
-
-            internal PropertyNameOmitter(params string[] names)
-            {
-                this.names = names;
-            }
-
-            public object Create(object request, ISpecimenContext context)
-            {
-                var propInfo = request as PropertyInfo;
-                if (propInfo != null && names.Contains(propInfo.Name))
-                    return new OmitSpecimen();
-
-                return new NoSpecimen();
-            }
-        }
-
 
         [Fact]
         public void Can_CRUD_Person()
@@ -141,6 +118,65 @@ namespace ppedv.Laureatus.Data.EfCore.Tests
                 //check DELETE
                 var loaded = con.Persons.Find(p.Id);
                 Assert.Null(loaded);
+            }
+        }
+
+
+        [Fact]
+        public void Delete_Person_should_delete_Laureate()
+        {
+            var p = new Person() { Name = "Fred" };
+            var l = new Laureate() { Person = p };
+
+            //erstelle person mit Laureate
+            using (var con = new EfContext())
+            {
+                con.Add(l);
+                con.SaveChanges();
+            }
+
+            //lösche person
+            using (var con = new EfContext())
+            {
+                var loaded = con.Persons.Find(p.Id);
+                con.Remove(loaded);
+                con.SaveChanges();
+            }
+
+            //Laureate sollte nicht mehr da sein
+            using (var con = new EfContext())
+            {
+                var loaded = con.Laureates.Find(l.Id);
+                loaded.Should().BeNull();
+            }
+        }
+
+        [Fact]
+        public void Delete_Laureate_should_not_delete_Person()
+        {
+            var p = new Person() { Name = "Fred" };
+            var l = new Laureate() { Person = p };
+
+            //erstelle person mit Laureate
+            using (var con = new EfContext())
+            {
+                con.Add(l);
+                con.SaveChanges();
+            }
+
+            //lösche laureat
+            using (var con = new EfContext())
+            {
+                var loaded = con.Laureates.Find(l.Id);
+                con.Remove(loaded);
+                con.SaveChanges();
+            }
+
+            //Person sollte da sein
+            using (var con = new EfContext())
+            {
+                var loaded = con.Persons.Find(p.Id);
+                loaded.Should().NotBeNull();
             }
         }
     }

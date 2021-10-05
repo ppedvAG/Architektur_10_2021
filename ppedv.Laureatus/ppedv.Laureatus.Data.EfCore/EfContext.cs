@@ -30,12 +30,14 @@ namespace ppedv.Laureatus.Data.EfCore
             modelBuilder.Entity<Person>().Property(x => x.Job).HasMaxLength(72).HasColumnName("Beruf");
 
             modelBuilder.Entity<Price>().HasIndex(x => x.Year).IsUnique();
+
+            modelBuilder.Entity<Person>().HasMany(x => x.Laureates).WithOne(x => x.Person).IsRequired().OnDelete(DeleteBehavior.Cascade);
         }
 
         public override int SaveChanges()
         {
             var now = DateTime.Now;
-            foreach (var item in ChangeTracker.Entries().Where(x=>x.State == EntityState.Added))
+            foreach (var item in ChangeTracker.Entries().Where(x => x.State == EntityState.Added))
             {
                 if (item.Entity is Entity en)
                 {
