@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Data.EfCore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Data.EfCore.Tests", "ppedv.Laureatus.Data.EfCore.Tests\ppedv.Laureatus.Data.EfCore.Tests.csproj", "{19F1732B-2647-4F5B-9B83-A5EBF79B187F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Logic", "ppedv.Laureatus.Logic\ppedv.Laureatus.Logic.csproj", "{39EE427C-D879-4EC6-89BE-907EB6CA03E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.UI.DevConsole", "ppedv.Laureatus.UI.DevConsole\ppedv.Laureatus.UI.DevConsole.csproj", "{F1F9D25F-55D0-4B51-BCFA-21ECE4D9BA44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{19F1732B-2647-4F5B-9B83-A5EBF79B187F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1732B-2647-4F5B-9B83-A5EBF79B187F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19F1732B-2647-4F5B-9B83-A5EBF79B187F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EE427C-D879-4EC6-89BE-907EB6CA03E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EE427C-D879-4EC6-89BE-907EB6CA03E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EE427C-D879-4EC6-89BE-907EB6CA03E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EE427C-D879-4EC6-89BE-907EB6CA03E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1F9D25F-55D0-4B51-BCFA-21ECE4D9BA44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1F9D25F-55D0-4B51-BCFA-21ECE4D9BA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1F9D25F-55D0-4B51-BCFA-21ECE4D9BA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1F9D25F-55D0-4B51-BCFA-21ECE4D9BA44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
