@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Model", "ppedv.Laureatus.Model\ppedv.Laureatus.Model.csproj", "{D4FE1FD7-5C0F-477A-A657-4B0C5B85B44D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.Data.EfCore", "ppedv.Laureatus.Data.EfCore\ppedv.Laureatus.Data.EfCore.csproj", "{28993115-17B9-48A4-B9AD-9FE6CFA2F625}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D4FE1FD7-5C0F-477A-A657-4B0C5B85B44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4FE1FD7-5C0F-477A-A657-4B0C5B85B44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4FE1FD7-5C0F-477A-A657-4B0C5B85B44D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28993115-17B9-48A4-B9AD-9FE6CFA2F625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28993115-17B9-48A4-B9AD-9FE6CFA2F625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28993115-17B9-48A4-B9AD-9FE6CFA2F625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28993115-17B9-48A4-B9AD-9FE6CFA2F625}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
