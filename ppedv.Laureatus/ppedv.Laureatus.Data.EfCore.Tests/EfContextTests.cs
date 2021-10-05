@@ -126,7 +126,7 @@ namespace ppedv.Laureatus.Data.EfCore.Tests
         public void Delete_Person_should_delete_Laureate()
         {
             var p = new Person() { Name = "Fred" };
-            var l = new Laureate() { Person = p };
+            var l = new Laureate() { Person = p, Price = new Price() { Year = new Random().Next() } };
 
             //erstelle person mit Laureate
             using (var con = new EfContext())
@@ -155,7 +155,7 @@ namespace ppedv.Laureatus.Data.EfCore.Tests
         public void Delete_Laureate_should_not_delete_Person()
         {
             var p = new Person() { Name = "Fred" };
-            var l = new Laureate() { Person = p };
+            var l = new Laureate() { Person = p, Price = new Price() };
 
             //erstelle person mit Laureate
             using (var con = new EfContext())

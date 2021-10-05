@@ -31,7 +31,10 @@ namespace ppedv.Laureatus.Data.EfCore
 
             modelBuilder.Entity<Price>().HasIndex(x => x.Year).IsUnique();
 
-            modelBuilder.Entity<Person>().HasMany(x => x.Laureates).WithOne(x => x.Person).IsRequired().OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Person>().HasMany(x => x.Laureates).WithOne(x => x.Person).IsRequired().OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Laureate>().HasOne(x => x.Person).WithMany(x => x.Laureates).IsRequired().OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Laureate>().HasOne(x => x.Price).WithMany(x => x.Laureates).IsRequired().OnDelete(DeleteBehavior.Cascade);
+
         }
 
         public override int SaveChanges()
