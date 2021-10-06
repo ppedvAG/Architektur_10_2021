@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Laureatus.Logic.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.UI.WebMVC", "ppedv.Laureatus.UI.WebMVC\ppedv.Laureatus.UI.WebMVC.csproj", "{A232F0A3-E972-433A-9118-EC6ABABC10DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Laureatus.UI.Wpf", "ppedv.Laureatus.UI.Wpf\ppedv.Laureatus.UI.Wpf.csproj", "{86877ED2-BCD1-454B-88DC-3B9667F9EC4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{A232F0A3-E972-433A-9118-EC6ABABC10DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A232F0A3-E972-433A-9118-EC6ABABC10DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A232F0A3-E972-433A-9118-EC6ABABC10DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86877ED2-BCD1-454B-88DC-3B9667F9EC4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86877ED2-BCD1-454B-88DC-3B9667F9EC4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86877ED2-BCD1-454B-88DC-3B9667F9EC4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86877ED2-BCD1-454B-88DC-3B9667F9EC4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
