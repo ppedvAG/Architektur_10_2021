@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ppedv.Laureatus.Data.EfCore\ppedv.Laureatus.Data.EfCore.csproj" />
     <ProjectReference Include="..\ppedv.Laureatus.Model\ppedv.Laureatus.Model.csproj" />
   </ItemGroup>
 
