@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <ProjectReference Include="..\ppedv.Laureatus.Data.EfCore\ppedv.Laureatus.Data.EfCore.csproj" />
+    <ProjectReference Include="..\ppedv.Laureatus.Logic\ppedv.Laureatus.Logic.csproj" />
+    <ProjectReference Include="..\ppedv.Laureatus.Model\ppedv.Laureatus.Model.csproj" />
   </ItemGroup>
 
 </Project>

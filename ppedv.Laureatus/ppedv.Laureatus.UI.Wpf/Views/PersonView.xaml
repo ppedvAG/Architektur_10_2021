@@ -4,8 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ppedv.Laureatus.UI.Wpf.Views"
+             xmlns:vm="clr-namespace:ppedv.Laureatus.UI.Wpf.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:PersonViewModel/>
+    </UserControl.DataContext>
 
     <DockPanel>
         <WrapPanel DockPanel.Dock="Top">
@@ -15,9 +19,9 @@
                     <Setter Property="Margin" Value="4"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button>Speichern</Button>
-            <Button>Neu</Button>
-            <Button>Löschen</Button>
+            <Button Command="{Binding SaveCommand}">Speichern</Button>
+            <Button Command="{Binding NewCommand}">Neu</Button>
+            <Button Command="{Binding DeleteCommand}">Löschen</Button>
         </WrapPanel>
 
         <Grid>
@@ -25,7 +29,7 @@
                 <ColumnDefinition />
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid />
+            <DataGrid SelectedItem="{Binding SelectedPerson}" ItemsSource="{Binding Personen}" />
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -40,15 +44,18 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Label>Name</Label>
-                <TextBox Grid.Column="1"/>
+                <TextBox Grid.Column="1" Text="{Binding SelectedPerson.Name}"/>
                 <Label Grid.Row="1">Job</Label>
-                <TextBox Grid.Column="1" Grid.Row="1"/>
+                <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedPerson.Job}"/>
                 <Label Grid.Row="2">Nationalität</Label>
-                <TextBox Grid.Column="1" Grid.Row="2"/>
+                <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding SelectedPerson.Nationality}"/>
                 <Label Grid.Row="3">Birthdate</Label>
-                <DatePicker Grid.Column="1" Grid.Row="3"/>
+                <DockPanel Grid.Column="1" Grid.Row="3">
+                    <TextBlock DockPanel.Dock="Right"  Text="{Binding Alter,FallbackValue='000'}"/>
+                    <DatePicker SelectedDate="{Binding SelectedPerson.BirthDate}"/>
+                </DockPanel>
                 <Label Grid.Row="4">Deathdate</Label>
-                <DatePicker Grid.Column="1" Grid.Row="4"/>
+                <DatePicker Grid.Column="1" Grid.Row="4" SelectedDate="{Binding SelectedPerson.DeathDate}"/>
                 <GroupBox Grid.ColumnSpan="2" Grid.Row="5" Header="Preise">
                     <ListBox/>
                 </GroupBox>

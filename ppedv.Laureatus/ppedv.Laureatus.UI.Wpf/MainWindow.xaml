@@ -12,7 +12,7 @@
             <MenuItem Header="Datei">
                 <MenuItem Header="Öffnen"/>
                 <Separator/>
-                <MenuItem Header="Einstellungen"/>
+                <MenuItem Header="Einstellungen" />
                 <Separator/>
                 <MenuItem Header="Benden"/>
             </MenuItem>
