@@ -1,7 +1,13 @@
+using ppedv.Laureatus.Model.Contracts;
+using System.Text.Json.Serialization;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+                .AddJsonOptions(o => o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+
+builder.Services.AddScoped(typeof(IRepository), typeof(ppedv.Laureatus.Data.EfCore.EfRepository));
 
 var app = builder.Build();
 
@@ -16,6 +22,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseDeveloperExceptionPage();
 app.UseRouting();
 
 app.UseAuthorization();

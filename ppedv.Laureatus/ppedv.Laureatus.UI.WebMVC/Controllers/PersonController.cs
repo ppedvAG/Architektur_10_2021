@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ppedv.Laureatus.Logic;
 using ppedv.Laureatus.Model;
+using ppedv.Laureatus.Model.Contracts;
 using ppedv.Laureatus.UI.WebMVC.Models;
 
 namespace ppedv.Laureatus.UI.WebMVC.Controllers
@@ -9,7 +10,12 @@ namespace ppedv.Laureatus.UI.WebMVC.Controllers
     public class PersonController : Controller
     {
 
-        Core core = new Core(new Data.EfCore.EfRepository());
+        Core core = null;
+
+        public PersonController(IRepository repo)
+        {
+            core = new Core(repo);
+        }
 
         // GET: PersonController
         public ActionResult Index()
